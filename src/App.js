@@ -1,17 +1,24 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
-const App = () => {
-  const [count, setCount] = useState(0);
+function ArrayExample() {
+  const [items, setItems] = useState([]);
 
-  const increment = () => {
-    setCount(count + 1);
+  const addItem = () => {
+    // 新しいアイテムを生成し、現在の配列に追加する
+    const newItem = `アイテム ${items.length + 1}`;
+    setItems([...items, newItem]);
   };
 
   return (
     <div>
-      <p>ボタンが押された回数は {count}</p>
-      <button onClick={increment}>加算ボタン</button>
+      <button onClick={addItem}>Add Item</button>
+      <ul>
+        {items.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
     </div>
   );
-};
-export default App;
+}
+
+export default ArrayExample;
