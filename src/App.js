@@ -3,6 +3,7 @@ import { useState, useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 function App() {
+  // stash
   //todosが追加ボタンした状態を管理するオブジェクト
   //useStateオブジェクトの更新を監視するフックス
   const [todos, setTodos] = useState([]);
