@@ -41,10 +41,10 @@ function App() {
       {/* TodoListコンポーネントを呼び出してプロップスを渡す */}
       <TodoList todos={todos} toggleTodo={toggleTodo} />
       <input type="text" ref={todoNameRef} />
-      <button onClick={handleAddTodo}>ADD</button>
-      <button onClick={handleClear}>DELETE</button>
+      <button onClick={handleAddTodo}>追加</button>
+      <button onClick={handleClear}>削除</button>
       {/* filter関数でチェックが付いていないものだけ検知する */}
-      <div>残りのタスク:{todos.filter((todo) => !todo.completed).length}</div>
+      <div>タスク:{todos.filter((todo) => !todo.completed).length}</div>
     </>
   );
 }
